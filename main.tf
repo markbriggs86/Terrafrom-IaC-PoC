@@ -7,6 +7,14 @@ terraform {
       version = "~> 2.65"
     }
   }
+	
+  cloud {
+    organization = "MarksOrg"
+
+    workspaces {
+      name = "Terraform-IaC-PoC"
+    }
+  }
   
 provider "azurerm" {
  features {}
