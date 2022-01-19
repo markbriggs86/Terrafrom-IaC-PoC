@@ -23,3 +23,11 @@ resource "azurerm_resource_group" "rg" {
 	Repository = "GitHub"
   }
 }
+	
+#Define vnet and subnet
+resource "azurerm_virtual_network" "MarksOrg-vnet" {
+  name                = "MarksOrg-vnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = "uksouth"
+  resource_group_name = azurerm_resource_group.rg.name
+}
